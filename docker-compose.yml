@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pg:
+    container_name: next-saas-rbac
+    image: bitnami/postgresql:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USER=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DB=next-saas
