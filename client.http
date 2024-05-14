@@ -19,7 +19,7 @@ Content-Type: application/json
 
 {
   "email": "gilberto@acme-inc.com",
-  "password": "123456"
+  "password": "aaa333"
 }
 
 ###
