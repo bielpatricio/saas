@@ -23,7 +23,7 @@ export async function getProjects(app: FastifyInstance) {
             slug: z.string(),
           }),
           response: {
-            204: z.object({
+            200: z.object({
               projects: z.array(
                 z.object({
                   id: z.string().uuid(),
@@ -31,13 +31,13 @@ export async function getProjects(app: FastifyInstance) {
                   slug: z.string(),
                   ownerId: z.string().uuid(),
                   description: z.string(),
-                  avatarUrl: z.string().nullable(),
+                  avatarUrl: z.string().url().nullable(),
                   organizationId: z.string().uuid(),
                   createdAt: z.date(),
                   owner: z.object({
                     id: z.string().uuid(),
                     name: z.string().nullable(),
-                    avatarUrl: z.string().nullable(),
+                    avatarUrl: z.string().url().nullable(),
                   }),
                 }),
               ),

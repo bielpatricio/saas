@@ -18,6 +18,9 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-password-recover'
 import { resetPassword } from './routes/auth/resert-password'
+import { getMembers } from './routes/members/get-members'
+import { removeMembers } from './routes/members/remove-member'
+import { updateMembers } from './routes/members/update-member'
 import { createOrganization } from './routes/orgs/create-organization'
 import { getMembership } from './routes/orgs/get-membership'
 import { getOrganization } from './routes/orgs/get-organization'
@@ -88,6 +91,10 @@ app.register(deleteProject)
 app.register(getProject)
 app.register(getProjects)
 app.register(updateProject)
+
+app.register(getMembers)
+app.register(updateMembers)
+app.register(removeMembers)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('Server is running on port 3333')
