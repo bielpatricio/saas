@@ -11,16 +11,12 @@ export function isAuthenticated() {
 export async function auth() {
   const token = cookies().get('token')?.value
 
-  console.info('aaaaaaaaaaaaaa', { token })
-
   if (!token) {
     redirect('/auth/sign-in')
   }
 
   try {
     const { user } = await getProfile()
-
-    console.info('aaaaaaaaaaaaaa', { user })
 
     return { user }
   } catch (error) {
