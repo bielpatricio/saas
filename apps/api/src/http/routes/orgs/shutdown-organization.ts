@@ -44,8 +44,6 @@ export async function shutdownOrganization(app: FastifyInstance) {
           )
         }
 
-        console.info({ organization }, organization.id)
-
         await prisma.organization.delete({
           where: {
             id: organization.id,

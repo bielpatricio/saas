@@ -1,7 +1,11 @@
-export default function Home() {
+import { auth } from '@/auth/auth'
+
+export default async function Home() {
+  const { user } = await auth()
+
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
-      <h1>Hello world</h1>
+      <h1>{user.name}</h1>
     </div>
   )
 }
