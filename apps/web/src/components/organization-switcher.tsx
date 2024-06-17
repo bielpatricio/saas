@@ -1,7 +1,7 @@
 import { ChevronsUpDown, PlusCircle } from 'lucide-react'
-import { cookies } from 'next/headers'
 import Link from 'next/link'
 
+import { getCurrentOrg } from '@/auth/auth'
 import { getOrganizations } from '@/http/get-organizations'
 
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -16,7 +16,7 @@ import {
 } from './ui/dropdown-menu'
 
 export async function OrganizationSwitcher() {
-  const currentOrgSlug = cookies().get('org')?.value
+  const currentOrgSlug = await getCurrentOrg()
   const { organizations } = await getOrganizations()
 
   const currentOrganization = organizations.find(
@@ -53,11 +53,7 @@ export async function OrganizationSwitcher() {
         <DropdownMenuGroup>
           <DropdownMenuLabel>Organization</DropdownMenuLabel>
           {organizations.map((organization) => (
-            <DropdownMenuItem
-              className="hover:cursor-pointer"
-              key={organization.id}
-              asChild
-            >
+            <DropdownMenuItem key={organization.id} asChild>
               <Link href={`/org/${organization.slug}`}>
                 <Avatar className="mr-2 size-4">
                   {organization.avatarUrl && (
