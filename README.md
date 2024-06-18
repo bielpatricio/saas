@@ -1,6 +1,25 @@
 # Next.js SaaS + RBAC
 
+<!-- TABLE OF CONTENTS -->
+
+## Contents
+
+<p align="center">
+  <p><a href="#about-the-project" title=" go to About the Project">About The Project</a></p>
+  <p><a href="#features" title=" go to Features">Features</a></p>
+  <p><a href="#prints" title=" go to Print">Print</a></p>
+  <p><a href="#running-locally" title=" go to Running locally">Running locally</a></p>
+  <p><a href="#contact" title=" go to Contact">Contact</a></p>
+</p>
+
+<br>
+<!-- ABOUT THE PROJECT -->
+
+# About The Project
+
 This project contains all the necessary boilerplate to setup a multi-tenant SaaS with Next.js including authentication and RBAC authorization.
+
+<br>
 
 ## Features
 
@@ -82,7 +101,7 @@ Roles & permissions.
 - Only administrators and project authors may update/delete the project;
 - Members can leave their own organization;
   
-### Prints
+## Prints
 
 ![image](https://github.com/bielpatricio/saas/assets/32223762/649a8e37-92b4-495b-bc0a-0f686646d8fe)
 
@@ -95,3 +114,27 @@ Roles & permissions.
 ![image](https://github.com/bielpatricio/saas/assets/32223762/874e693c-d8dc-4e80-aa9a-bc2d7826416a)
 
 ![image](https://github.com/bielpatricio/saas/assets/32223762/d2134f9a-991e-4d8c-96e9-f4aac93c5204)
+
+<br>
+
+# Running locally
+
+```bash
+# Clone this repository
+$ git clone https://github.com/bielpatricio/saas.git
+# Access the project folder in your terminal
+$ cd saas
+# Install the dependencies
+$ pnpm i
+# create a .env and will need 3 variables, the NEXT_URL=http://localhost:3000, the STRIPE_PUBLIC_KEY, and STRIPE_PRIVATE_KEY, this two you will need to take from https://dashboard.stripe.com/test/dashboard, if you don't have an account, create one and create some products there.
+# Run the application in development mode
+$ pnpm run dev
+```
+
+<br>
+
+# Contact
+
+Gabriel Patrício - gabrieltp087@gmail.com - [https://github.com/bielpatricio/](https://github.com/bielpatricio)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
